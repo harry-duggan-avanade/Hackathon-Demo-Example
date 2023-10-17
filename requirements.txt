@@ -1,4 +1,4 @@
-openai==0.12.3
+openai==0.10.5
 typing==3.10.0.2
 fastapi==0.70.0
 dotenv==0.19.1
