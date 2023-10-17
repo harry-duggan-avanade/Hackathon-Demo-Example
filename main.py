@@ -1,25 +1,18 @@
-import os
 import openai
-from typing import Union
 from fastapi import FastAPI
-from dotenv import load_dotenv
-from pydantic import BaseModel
 
-load_dotenv()
-
-openai.api_type = os.getenv("OPENAI_API_TYPE")
-openai.api_base = os.getenv("OPENAI_API_BASE")
-openai.api_version = os.getenv("OPENAI_API_VERSION")
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_type = "azure"
+openai.api_base = ""
+openai.api_version = "2023-07-01-preview"
+openai.api_key = ""
 
 app = FastAPI()
-
 
 @app.post("/")
 def use_chatbot(messages: list[dict]):
     
     response = openai.ChatCompletion.create(
-        engine= os.getenv("OPENAI_MODEL"),
+        engine= "gpt-35-turbo-16k",
         messages = messages,
         temperature=0.7,
         max_tokens=800,
