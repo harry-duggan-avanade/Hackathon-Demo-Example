@@ -1,5 +1,0 @@
-pandas==1.1.5
-openai==0.10.5
-typing==3.7.4.3
-fastapi==0.70.0
-pydantic==1.9.2
